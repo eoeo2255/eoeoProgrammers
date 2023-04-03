@@ -1,17 +1,14 @@
 class Solution {
     public int solution(int i, int j, int k) {
         int answer = 0;
-        String str = "";
+        StringBuilder sb = new StringBuilder();
 
         for (int n=i; n<=j; n++) {
-            str += n+"";
+            sb.append(n);
         }
 
-        String[] tem = str.split("");
-        String k2 = k + "";
-
-        for (int n =0; n<tem.length; n++) {
-            if (tem[n].equals(k2)) {
+        for (int n =0; n<sb.length(); n++) {
+            if ((sb.charAt(n)-'0')==k) {
                 answer++;
             }
         }
