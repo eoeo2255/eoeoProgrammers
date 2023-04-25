@@ -66,12 +66,6 @@ class Solution {
             borrowCount = extraClothes.size();
         }
 
-        for (int i = 0; i < borrowMe.size(); i++) {
-            if (borrowMe.get(i) == lost && borrowMe.get(i) ==reserve) {
-
-            }
-        }
-
         return borrowCount;
     }
 
