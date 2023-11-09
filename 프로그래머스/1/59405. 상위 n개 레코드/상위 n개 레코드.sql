@@ -1,0 +1,5 @@
+SELECT NAME
+FROM (SELECT *FROM ANIMAL_INS ORDER BY DATETIME)
+-- 인라인뷰, FROM 절에 사용하는 서브쿼리
+WHERE ROWNUM = 1
+-- ROWNUM 으로 LIMIT 의 효과를 줄 수 있음
