@@ -1,0 +1,3 @@
+SELECT MAX(PRICE) MAX_PRICE
+-- MAX 로 해당 컬럼 중 가장 큰 값 만을 출력
+FROM PRODUCT
