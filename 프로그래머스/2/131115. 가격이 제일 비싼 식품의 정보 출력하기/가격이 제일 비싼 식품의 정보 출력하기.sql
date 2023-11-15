@@ -1,0 +1,4 @@
+SELECT *
+FROM (SELECT * FROM FOOD_PRODUCT ORDER BY PRICE DESC)
+-- 인라인 뷰를 통해 가장 비싼 순으로 정렬
+WHERE ROWNUM = 1
