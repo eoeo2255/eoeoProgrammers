@@ -1,0 +1,9 @@
+-- 가격대 별로 나눈 그룹의 COUNT를 세어 상품 개수를 구할 수 있음
+SELECT PRICE_GROUP, COUNT(PRICE_GROUP) AS PRODUCTS
+FROM (
+    -- 10000으로 나눈 값의 소수점 이하를 버리고 * 10000을 하면 만원 단위의 가격대 별로 나눌 수 있음
+    SELECT FLOOR(PRICE/10000) * 10000 AS PRICE_GROUP
+    FROM PRODUCT
+)
+GROUP BY PRICE_GROUP
+ORDER BY PRICE_GROUP
