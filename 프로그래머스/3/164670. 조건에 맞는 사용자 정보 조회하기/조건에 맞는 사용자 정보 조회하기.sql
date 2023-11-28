@@ -1,0 +1,14 @@
+SELECT USER_ID
+    , NICKNAME
+    , CITY || ' ' || STREET_ADDRESS1 || ' ' || STREET_ADDRESS2 AS 전체주소
+    , SUBSTR(TLNO, 1,3) || '-' || SUBSTR(TLNO, 4,4) || '-' || SUBSTR(TLNO, -4, 4) AS 전화번호
+FROM USED_GOODS_USER
+WHERE USER_ID IN 
+--IN은 해당 열의 값을 괄호로 묶인 목록 내에 제공된 값 집합과 비교
+(
+    SELECT WRITER_ID
+    FROM USED_GOODS_BOARD B
+    GROUP BY WRITER_ID
+    HAVING COUNT(TITLE) > 2
+)
+ORDER BY USER_ID DESC;
