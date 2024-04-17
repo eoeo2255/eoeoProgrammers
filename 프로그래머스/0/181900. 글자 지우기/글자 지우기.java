@@ -1,17 +1,11 @@
-import java.util.Arrays;
-
 class Solution {
     public String solution(String my_string, int[] indices) {
-        StringBuilder answer = new StringBuilder(my_string);
-        int[] sort = Arrays.stream(indices).sorted().toArray();
-        int index = 0;
+        String[] strArr = my_string.split( "" );
 
-        for (int i = 0; i < indices.length; i++) {
-            int tem = sort[i] - index;
-            answer = answer.deleteCharAt(tem);
-            index++;
+        for ( int index : indices ) {
+            strArr[ index ] = "";
         }
 
-        return String.valueOf(answer);
+        return String.join( "", strArr );
     }
 }
