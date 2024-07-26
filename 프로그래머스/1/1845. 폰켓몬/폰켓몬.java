@@ -1,15 +1,11 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 
 class Solution {
     public int solution(int[] nums) {
-        List<Integer> types = new ArrayList<>();
+        HashSet<Integer> types = new HashSet<>();
 
-        //  중복되는 종류 제거
         for (int num: nums) {
-            if (!types.contains(num)){
-                types.add(num);
-            }
+            types.add(num);
         }
 
         int answer = nums.length / 2;
