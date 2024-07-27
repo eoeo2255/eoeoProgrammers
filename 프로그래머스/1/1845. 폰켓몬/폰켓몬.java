@@ -1,11 +1,14 @@
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
     public int solution(int[] nums) {
-        HashSet<Integer> types = new HashSet<>();
+        List<Integer> types = new ArrayList<>();
 
         for (int num: nums) {
-            types.add(num);
+            if (!types.contains(num)){
+                types.add(num);
+            }
         }
 
         int answer = nums.length / 2;
